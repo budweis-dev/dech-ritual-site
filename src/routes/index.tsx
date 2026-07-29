@@ -118,15 +118,15 @@ function Index() {
       {/* Header */}
       <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-md">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4 lg:px-10">
-          <a href="#top" className="font-serif text-2xl tracking-tight text-sage-deep">
-            dech<span className="text-sage">.</span>ritual
+          <a href="#top" className="font-serif text-2xl tracking-tight text-brown-deep">
+            dech<span className="text-brown">.</span>ritual
           </a>
           <nav className="hidden items-center gap-8 lg:flex">
             {nav.map((n) => (
               <a
                 key={n.href}
                 href={n.href}
-                className="text-sm text-muted-foreground transition-colors hover:text-sage-deep"
+                className="text-sm text-muted-foreground transition-colors hover:text-brown-deep"
               >
                 {n.label}
               </a>
@@ -134,7 +134,7 @@ function Index() {
           </nav>
           <a
             href="#rezervace"
-            className="rounded-full bg-sage px-5 py-2.5 text-sm font-medium text-primary-foreground transition-all hover:bg-sage-deep hover:shadow-lg"
+            className="rounded-full bg-brown px-5 py-2.5 text-sm font-medium text-primary-foreground transition-all hover:bg-brown-deep hover:shadow-lg"
           >
             Rezervovat sezení
           </a>
@@ -145,12 +145,12 @@ function Index() {
       <section id="top" className="relative overflow-hidden">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-20 lg:grid-cols-[1.1fr_1fr] lg:gap-16 lg:px-10 lg:py-32">
           <div className="flex flex-col justify-center">
-            <span className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-sage/30 bg-cream px-4 py-1.5 text-xs uppercase tracking-[0.2em] text-sage-deep">
-              <span className="h-1.5 w-1.5 rounded-full bg-sage" />
+            <span className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-brown/30 bg-cream px-4 py-1.5 text-xs uppercase tracking-[0.2em] text-brown-deep">
+              <span className="h-1.5 w-1.5 rounded-full bg-brown" />
               Vědomé dýchání · Praha
             </span>
-            <h1 className="font-serif text-5xl leading-[1.05] text-sage-deep sm:text-6xl lg:text-7xl">
-              Objevte sílu <em className="italic text-sage">vědomého</em> dechu
+            <h1 className="font-serif text-5xl leading-[1.05] text-brown-deep sm:text-6xl lg:text-7xl">
+              Objevte sílu <em className="italic text-brown">vědomého</em> dechu
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
               Individuální breathwork sezení, skupinové dechové kruhy a workshopy
@@ -159,20 +159,20 @@ function Index() {
             <div className="mt-10 flex flex-wrap gap-3">
               <a
                 href="#rezervace"
-                className="rounded-full bg-sage px-7 py-3.5 text-sm font-medium text-primary-foreground shadow-sm transition-all hover:bg-sage-deep hover:shadow-lg"
+                className="rounded-full bg-brown px-7 py-3.5 text-sm font-medium text-primary-foreground shadow-sm transition-all hover:bg-brown-deep hover:shadow-lg"
               >
                 Prohlédnout termíny
               </a>
               <a
                 href="#breathwork"
-                className="rounded-full border border-sage/40 px-7 py-3.5 text-sm font-medium text-sage-deep transition-colors hover:bg-sand/60"
+                className="rounded-full border border-brown/40 px-7 py-3.5 text-sm font-medium text-brown-deep transition-colors hover:bg-rose/60"
               >
                 Co je Breathwork?
               </a>
             </div>
           </div>
           <div className="relative">
-            <div className="absolute -inset-6 -z-10 rounded-[2rem] bg-sand/50 blur-2xl" />
+            <div className="absolute -inset-6 -z-10 rounded-[2rem] bg-rose/50 blur-2xl" />
             <img
               src={heroImg}
               width={1600}
@@ -181,7 +181,7 @@ function Index() {
               className="aspect-[4/5] w-full rounded-[2rem] object-cover shadow-xl"
             />
             <div className="absolute -bottom-6 -left-6 hidden rounded-2xl bg-card px-5 py-4 shadow-lg sm:block">
-              <p className="font-serif text-2xl text-sage-deep">200+</p>
+              <p className="font-serif text-2xl text-brown-deep">200+</p>
               <p className="text-xs uppercase tracking-widest text-muted-foreground">
                 Sezení a kruhů
               </p>
@@ -204,8 +204,8 @@ function Index() {
             />
           </div>
           <div className="flex flex-col justify-center">
-            <span className="mb-4 text-xs uppercase tracking-[0.25em] text-sage">O mně</span>
-            <h2 className="font-serif text-4xl leading-tight text-sage-deep sm:text-5xl">
+            <span className="mb-4 text-xs uppercase tracking-[0.25em] text-brown">O mně</span>
+            <h2 className="font-serif text-4xl leading-tight text-brown-deep sm:text-5xl">
               Jmenuji se Lucie Vaňková
             </h2>
             <div className="mt-6 space-y-5 text-[15px] leading-relaxed text-muted-foreground">
@@ -223,13 +223,13 @@ function Index() {
             </div>
             <div className="mt-8 flex gap-8 border-t border-border pt-6">
               <div>
-                <p className="font-serif text-3xl text-sage-deep">5+</p>
+                <p className="font-serif text-3xl text-brown-deep">5+</p>
                 <p className="text-xs uppercase tracking-widest text-muted-foreground">
                   let praxe
                 </p>
               </div>
               <div>
-                <p className="font-serif text-3xl text-sage-deep">certifikace</p>
+                <p className="font-serif text-3xl text-brown-deep">certifikace</p>
                 <p className="text-xs uppercase tracking-widest text-muted-foreground">
                   CCB · Somatic
                 </p>
@@ -243,10 +243,10 @@ function Index() {
       <section id="breathwork" className="border-t border-border/60">
         <div className="mx-auto max-w-6xl px-6 py-24 lg:px-10">
           <div className="mx-auto max-w-2xl text-center">
-            <span className="text-xs uppercase tracking-[0.25em] text-sage">
+            <span className="text-xs uppercase tracking-[0.25em] text-brown">
               Co je Breathwork
             </span>
-            <h2 className="mt-4 font-serif text-4xl leading-tight text-sage-deep sm:text-5xl">
+            <h2 className="mt-4 font-serif text-4xl leading-tight text-brown-deep sm:text-5xl">
               Přínosy vědomého dýchání
             </h2>
             <p className="mt-5 text-muted-foreground">
@@ -258,10 +258,10 @@ function Index() {
             {benefits.map((b) => (
               <article
                 key={b.n}
-                className="group rounded-3xl border border-border bg-card p-8 transition-all hover:-translate-y-1 hover:border-sage/40 hover:shadow-lg"
+                className="group rounded-3xl border border-border bg-card p-8 transition-all hover:-translate-y-1 hover:border-brown/40 hover:shadow-lg"
               >
-                <div className="mb-6 font-serif text-sm text-sage">{b.n}</div>
-                <h3 className="font-serif text-2xl leading-snug text-sage-deep">
+                <div className="mb-6 font-serif text-sm text-brown">{b.n}</div>
+                <h3 className="font-serif text-2xl leading-snug text-brown-deep">
                   {b.title}
                 </h3>
                 <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
@@ -274,12 +274,12 @@ function Index() {
       </section>
 
       {/* Services */}
-      <section id="sluzby" className="border-t border-border/60 bg-sand/30">
+      <section id="sluzby" className="border-t border-border/60 bg-rose/30">
         <div className="mx-auto max-w-6xl px-6 py-24 lg:px-10">
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
-              <span className="text-xs uppercase tracking-[0.25em] text-sage">Nabídka</span>
-              <h2 className="mt-4 font-serif text-4xl leading-tight text-sage-deep sm:text-5xl">
+              <span className="text-xs uppercase tracking-[0.25em] text-brown">Nabídka</span>
+              <h2 className="mt-4 font-serif text-4xl leading-tight text-brown-deep sm:text-5xl">
                 Nabídka služeb
               </h2>
             </div>
@@ -298,20 +298,20 @@ function Index() {
                     onClick={() => setActiveService(s.id)}
                     className={`group flex items-center justify-between rounded-2xl border px-6 py-5 text-left transition-all ${
                       isActive
-                        ? "border-sage bg-card shadow-sm"
-                        : "border-transparent bg-cream/60 hover:border-sage/30"
+                        ? "border-brown bg-card shadow-sm"
+                        : "border-transparent bg-cream/60 hover:border-brown/30"
                     }`}
                   >
                     <div>
-                      <p className="text-xs uppercase tracking-widest text-sage">
+                      <p className="text-xs uppercase tracking-widest text-brown">
                         {s.tag}
                       </p>
-                      <p className="mt-1 font-serif text-xl text-sage-deep">
+                      <p className="mt-1 font-serif text-xl text-brown-deep">
                         {s.title}
                       </p>
                     </div>
                     <span
-                      className={`text-xl transition-transform ${isActive ? "translate-x-1 text-sage" : "text-muted-foreground"}`}
+                      className={`text-xl transition-transform ${isActive ? "translate-x-1 text-brown" : "text-muted-foreground"}`}
                     >
                       →
                     </span>
@@ -320,20 +320,20 @@ function Index() {
               })}
             </div>
             <div className="rounded-3xl bg-card p-10 shadow-sm">
-              <p className="text-xs uppercase tracking-[0.25em] text-sage">
+              <p className="text-xs uppercase tracking-[0.25em] text-brown">
                 {active.tag}
               </p>
-              <h3 className="mt-3 font-serif text-3xl text-sage-deep sm:text-4xl">
+              <h3 className="mt-3 font-serif text-3xl text-brown-deep sm:text-4xl">
                 {active.title}
               </h3>
               <p className="mt-5 leading-relaxed text-muted-foreground">
                 {active.body}
               </p>
               <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-border pt-6">
-                <p className="font-serif text-2xl text-sage-deep">{active.price}</p>
+                <p className="font-serif text-2xl text-brown-deep">{active.price}</p>
                 <a
                   href="#rezervace"
-                  className="rounded-full bg-sage px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-sage-deep"
+                  className="rounded-full bg-brown px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-brown-deep"
                 >
                   Rezervovat termín
                 </a>
@@ -347,10 +347,10 @@ function Index() {
       <section id="rezervace" className="border-t border-border/60">
         <div className="mx-auto max-w-6xl px-6 py-24 lg:px-10">
           <div className="mx-auto max-w-2xl text-center">
-            <span className="text-xs uppercase tracking-[0.25em] text-sage">
+            <span className="text-xs uppercase tracking-[0.25em] text-brown">
               Kalendář & Rezervace
             </span>
-            <h2 className="mt-4 font-serif text-4xl leading-tight text-sage-deep sm:text-5xl">
+            <h2 className="mt-4 font-serif text-4xl leading-tight text-brown-deep sm:text-5xl">
               Rezervujte si své sezení
             </h2>
             <p className="mt-5 text-muted-foreground">
@@ -361,7 +361,7 @@ function Index() {
           <div className="mt-14 overflow-hidden rounded-3xl border border-border bg-card shadow-sm">
             <div className="flex items-center justify-between border-b border-border bg-cream/60 px-6 py-4">
               <div className="flex items-center gap-3">
-                <div className="h-2 w-2 rounded-full bg-sage" />
+                <div className="h-2 w-2 rounded-full bg-brown" />
                 <span className="text-sm text-muted-foreground">
                   Zenamu · rezervační systém
                 </span>
@@ -374,21 +374,21 @@ function Index() {
               {slots.map((slot) => (
                 <div
                   key={slot.date + slot.time}
-                  className="group rounded-2xl border border-border bg-cream/50 p-5 transition-all hover:border-sage/50 hover:bg-card"
+                  className="group rounded-2xl border border-border bg-cream/50 p-5 transition-all hover:border-brown/50 hover:bg-card"
                 >
                   <div className="flex items-baseline justify-between">
-                    <p className="font-serif text-2xl text-sage-deep">{slot.date}</p>
-                    <span className="text-xs uppercase tracking-widest text-sage">
+                    <p className="font-serif text-2xl text-brown-deep">{slot.date}</p>
+                    <span className="text-xs uppercase tracking-widest text-brown">
                       {slot.day}
                     </span>
                   </div>
                   <p className="mt-4 text-sm text-muted-foreground">{slot.type}</p>
                   <div className="mt-3 flex items-center justify-between">
-                    <span className="font-serif text-lg text-sage-deep">
+                    <span className="font-serif text-lg text-brown-deep">
                       {slot.time}
                     </span>
                     {slot.free ? (
-                      <span className="rounded-full bg-sage/10 px-3 py-1 text-xs text-sage-deep">
+                      <span className="rounded-full bg-brown/10 px-3 py-1 text-xs text-brown-deep">
                         Volné
                       </span>
                     ) : (
@@ -408,7 +408,7 @@ function Index() {
       </section>
 
       {/* HeroHero Community */}
-      <section className="border-t border-border/60 bg-sage-deep text-cream">
+      <section className="border-t border-border/60 bg-brown-deep text-cream">
         <div className="mx-auto max-w-6xl px-6 py-20 lg:px-10">
           <div className="grid items-center gap-8 md:grid-cols-[1.4fr_1fr]">
             <div>
@@ -426,7 +426,7 @@ function Index() {
             <div className="flex md:justify-end">
               <a
                 href="#"
-                className="rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-sage-deep transition-all hover:bg-sand"
+                className="rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-brown-deep transition-all hover:bg-rose"
               >
                 Vstoupit do členské sekce (HeroHero) →
               </a>
@@ -439,10 +439,10 @@ function Index() {
       <section className="border-t border-border/60">
         <div className="mx-auto max-w-6xl px-6 py-24 lg:px-10">
           <div className="mx-auto max-w-2xl text-center">
-            <span className="text-xs uppercase tracking-[0.25em] text-sage">
+            <span className="text-xs uppercase tracking-[0.25em] text-brown">
               Reference
             </span>
-            <h2 className="mt-4 font-serif text-4xl leading-tight text-sage-deep sm:text-5xl">
+            <h2 className="mt-4 font-serif text-4xl leading-tight text-brown-deep sm:text-5xl">
               Slova těch, kteří dýchali se mnou
             </h2>
           </div>
@@ -452,12 +452,12 @@ function Index() {
                 key={t.name}
                 className="flex flex-col justify-between rounded-3xl border border-border bg-card p-8 shadow-sm"
               >
-                <div className="font-serif text-4xl leading-none text-sage">“</div>
+                <div className="font-serif text-4xl leading-none text-brown">“</div>
                 <blockquote className="mt-2 text-[15px] leading-relaxed text-foreground/80">
                   {t.quote}
                 </blockquote>
                 <figcaption className="mt-8 border-t border-border pt-4">
-                  <p className="font-serif text-lg text-sage-deep">{t.name}</p>
+                  <p className="font-serif text-lg text-brown-deep">{t.name}</p>
                   <p className="text-xs uppercase tracking-widest text-muted-foreground">
                     {t.role}
                   </p>
@@ -469,11 +469,11 @@ function Index() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="border-t border-border/60 bg-sand/30">
+      <section id="faq" className="border-t border-border/60 bg-rose/30">
         <div className="mx-auto grid max-w-6xl gap-14 px-6 py-24 md:grid-cols-[1fr_1.4fr] lg:px-10">
           <div>
-            <span className="text-xs uppercase tracking-[0.25em] text-sage">FAQ</span>
-            <h2 className="mt-4 font-serif text-4xl leading-tight text-sage-deep sm:text-5xl">
+            <span className="text-xs uppercase tracking-[0.25em] text-brown">FAQ</span>
+            <h2 className="mt-4 font-serif text-4xl leading-tight text-brown-deep sm:text-5xl">
               Nejčastější dotazy
             </h2>
             <p className="mt-5 text-muted-foreground">
@@ -493,11 +493,11 @@ function Index() {
                     onClick={() => setOpenFaq(open ? null : i)}
                     className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
                   >
-                    <span className="font-serif text-lg text-sage-deep">
+                    <span className="font-serif text-lg text-brown-deep">
                       {f.q}
                     </span>
                     <span
-                      className={`text-2xl text-sage transition-transform ${open ? "rotate-45" : ""}`}
+                      className={`text-2xl text-brown transition-transform ${open ? "rotate-45" : ""}`}
                     >
                       +
                     </span>
@@ -519,8 +519,8 @@ function Index() {
         <div className="mx-auto max-w-6xl px-6 py-20 lg:px-10">
           <div className="grid gap-12 md:grid-cols-[1.3fr_1fr_1fr]">
             <div>
-              <a href="#top" className="font-serif text-3xl tracking-tight text-sage-deep">
-                dech<span className="text-sage">.</span>ritual
+              <a href="#top" className="font-serif text-3xl tracking-tight text-brown-deep">
+                dech<span className="text-brown">.</span>ritual
               </a>
               <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground">
                 Vědomé dýchání jako každodenní rituál klidu, síly a přítomnosti.
@@ -530,34 +530,34 @@ function Index() {
               </p>
             </div>
             <div>
-              <p className="text-xs uppercase tracking-[0.25em] text-sage">Kontakt</p>
+              <p className="text-xs uppercase tracking-[0.25em] text-brown">Kontakt</p>
               <ul className="mt-4 space-y-2 text-sm text-foreground/80">
                 <li>Lucie Vaňková</li>
                 <li>
-                  <a href="mailto:ahoj@dechritual.cz" className="hover:text-sage-deep">
+                  <a href="mailto:ahoj@dechritual.cz" className="hover:text-brown-deep">
                     ahoj@dechritual.cz
                   </a>
                 </li>
                 <li>
-                  <a href="tel:+420777123456" className="hover:text-sage-deep">
+                  <a href="tel:+420777123456" className="hover:text-brown-deep">
                     +420 777 123 456
                   </a>
                 </li>
               </ul>
             </div>
             <div>
-              <p className="text-xs uppercase tracking-[0.25em] text-sage">Sledujte</p>
+              <p className="text-xs uppercase tracking-[0.25em] text-brown">Sledujte</p>
               <ul className="mt-4 space-y-2 text-sm text-foreground/80">
                 <li>
                   <a
                     href="https://instagram.com/dech.ritual"
-                    className="hover:text-sage-deep"
+                    className="hover:text-brown-deep"
                   >
                     Instagram — @dech.ritual
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-sage-deep">
+                  <a href="#" className="hover:text-brown-deep">
                     HeroHero — členská sekce
                   </a>
                 </li>
