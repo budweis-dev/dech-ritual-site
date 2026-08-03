@@ -354,52 +354,17 @@ function Index() {
             </p>
           </div>
 
-          <div className="mt-14 overflow-hidden rounded-3xl border border-border bg-card shadow-sm">
-            <div className="flex items-center justify-between border-b border-border bg-cream/60 px-6 py-4">
-              <div className="flex items-center gap-3">
-                <div className="h-2 w-2 rounded-full bg-brown" />
-                <span className="text-sm text-muted-foreground">
-                  Zenamu · rezervační systém
-                </span>
-              </div>
-              <span className="text-xs uppercase tracking-widest text-muted-foreground">
-                Listopad 2025
-              </span>
-            </div>
-            <div className="grid gap-4 p-6 sm:grid-cols-2 lg:grid-cols-4">
-              {slots.map((slot) => (
-                <div
-                  key={slot.date + slot.time}
-                  className="group rounded-2xl border border-border bg-cream/50 p-5 transition-all hover:border-brown/50 hover:bg-card"
-                >
-                  <div className="flex items-baseline justify-between">
-                    <p className="font-serif text-2xl text-brown-deep">{slot.date}</p>
-                    <span className="text-xs uppercase tracking-widest text-brown">
-                      {slot.day}
-                    </span>
-                  </div>
-                  <p className="mt-4 text-sm text-muted-foreground">{slot.type}</p>
-                  <div className="mt-3 flex items-center justify-between">
-                    <span className="font-serif text-lg text-brown-deep">
-                      {slot.time}
-                    </span>
-                    {slot.free ? (
-                      <span className="rounded-full bg-brown/10 px-3 py-1 text-xs text-brown-deep">
-                        Volné
-                      </span>
-                    ) : (
-                      <span className="rounded-full bg-muted px-3 py-1 text-xs text-muted-foreground">
-                        Plno
-                      </span>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="border-t border-border bg-cream/40 px-6 py-4 text-center text-xs text-muted-foreground">
-              Rezervace probíhá zabezpečeně přes Zenamu · potvrzení obdržíte e-mailem
-            </div>
+          <div className="mt-14 overflow-hidden rounded-3xl border border-border bg-card p-4 shadow-sm sm:p-8">
+            <div
+              id="zenamu-workshops"
+              calendar-id="96c7a0ca48777e9a7b02404c0386a246"
+              data-config='{"showTitle": true}'
+            />
           </div>
+          <p className="mt-6 text-center text-xs text-muted-foreground">
+            Rezervace probíhá zabezpečeně přes Zenamu · potvrzení obdržíte e-mailem
+          </p>
+
         </div>
       </section>
 
