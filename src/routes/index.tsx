@@ -108,6 +108,23 @@ function Index() {
   const [activeService, setActiveService] = useState(services[0].id);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const active = services.find((s) => s.id === activeService)!;
+  const zenamuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = zenamuRef.current;
+    if (!el) return;
+    el.setAttribute("calendar-id", "96c7a0ca48777e9a7b02404c0386a246");
+    el.setAttribute("data-config", '{"showTitle": true}');
+
+    const src = "https://zenamu.com/calendar/workshops.js";
+    if (document.querySelector(`script[src="${src}"]`)) return;
+    const script = document.createElement("script");
+    script.src = src;
+    script.async = true;
+    script.crossOrigin = "anonymous";
+    document.body.appendChild(script);
+  }, []);
+
 
   return (
     <div className="min-h-screen bg-background text-foreground">
