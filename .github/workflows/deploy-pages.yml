@@ -29,13 +29,15 @@ jobs:
       - name: Build static site
         env:
           STATIC_BUILD: "true"
+          # Served from https://<user>.github.io/<repo>/ — assets need the subpath.
+          BASE_PATH: "/${{ github.event.repository.name }}/"
         run: bun run build
 
       - name: Prepare Pages output
         run: |
           touch dist/client/.nojekyll
           cp dist/client/index.html dist/client/404.html
-          echo "dechritual.cz" > dist/client/CNAME
+
 
       - uses: actions/configure-pages@v5
         with:
