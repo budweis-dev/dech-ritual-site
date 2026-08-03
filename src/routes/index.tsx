@@ -2,6 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import heroImg from "@/assets/hero.jpg";
 import lucieImg from "@/assets/lucie.jpg";
+import { dotazy, oMne, prinosy, reference, sluzby } from "@/content";
+
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -16,93 +18,31 @@ const nav = [
   { href: "#kontakt", label: "Kontakt" },
 ];
 
-const benefits = [
-  {
-    n: "01",
-    title: "Mentální čistota a úleva od stresu",
-    body: "Uvolněte napětí, zpomalte myšlenkové proudy a najděte prostor pro klid a jasnost mysli.",
-  },
-  {
-    n: "02",
-    title: "Hluboká regenerace organismu",
-    body: "Okysličení buněk, podpora nervového systému a přirozená obnova energie skrze vědomý dech.",
-  },
-  {
-    n: "03",
-    title: "Emoční uvolnění a vnitřní klid",
-    body: "Bezpečné rozpuštění zadržovaných emocí a návrat k pocitu celistvosti a přítomnosti.",
-  },
-];
+const benefits = prinosy.items.map((i) => ({
+  n: i.meta.n ?? "",
+  title: i.title,
+  body: i.body.join(" "),
+}));
 
-const services = [
-  {
-    id: "individual",
-    title: "Individuální sezení",
-    tag: "1 : 1",
-    body: "Osobní 90minutové sezení šité na míru vaším potřebám. Bezpečný prostor pro hlubokou práci s dechem, emocemi a tělem.",
-    price: "od 1 800 Kč",
-  },
-  {
-    id: "kruhy",
-    title: "Skupinové dechové kruhy",
-    tag: "Skupina",
-    body: "Sdílený rituál v malé skupině, kde společně vstupujeme do stavu hlubokého dechu a společné regenerace.",
-    price: "od 650 Kč",
-  },
-  {
-    id: "workshopy",
-    title: "Workshopy & Retreaty",
-    tag: "Víkend",
-    body: "Delší formáty spojující breathwork, meditaci a pobyt v přírodě. Prostor pro proměnu a nový začátek.",
-    price: "od 3 900 Kč",
-  },
-  {
-    id: "firmy",
-    title: "Firemní programy na míru",
-    tag: "B2B",
-    body: "Dechové programy pro týmy — od krátkých session až po celodenní wellbeing dny s důrazem na regeneraci.",
-    price: "na vyžádání",
-  },
-];
+const services = sluzby.items.map((i, idx) => ({
+  id: i.meta.id ?? String(idx),
+  title: i.title,
+  tag: i.meta.tag ?? "",
+  body: i.body.join(" "),
+  price: i.meta.price ?? "",
+}));
 
+const testimonials = reference.items.map((i) => ({
+  quote: i.body.join(" "),
+  name: i.title,
+  role: i.meta.role ?? "",
+}));
 
+const faqs = dotazy.items.map((i) => ({
+  q: i.title,
+  a: i.body.join(" "),
+}));
 
-
-const testimonials = [
-  {
-    quote:
-      "Po prvním sezení s Lucií jsem cítila úlevu, kterou jsem dlouho hledala. Neuvěřitelně jemný a bezpečný přístup.",
-    name: "Kateřina H.",
-    role: "Praha",
-  },
-  {
-    quote:
-      "Breathwork mi otevřel dveře k emocím, o kterých jsem netušila, že je v sobě nosím. Doporučuji každému.",
-    name: "Markéta S.",
-    role: "Brno",
-  },
-  {
-    quote:
-      "Skupinový kruh byl transformační zážitek. Lucie drží prostor s neuvěřitelnou přítomností a laskavostí.",
-    name: "Tomáš V.",
-    role: "Praha",
-  },
-];
-
-const faqs = [
-  {
-    q: "Jak probíhá první individuální sezení?",
-    a: "Sezení trvá zhruba 90 minut. Začínáme krátkým rozhovorem o vašem záměru, následuje samotná dechová technika vleže s hudbou a v závěru sdílíme prožitky a integrujeme.",
-  },
-  {
-    q: "Co si vzít na skupinový dechový kruh na sebe?",
-    a: "Pohodlné, volné oblečení ve vrstvách. Karimatku, deku a polštář si na místě zajistíme. Doporučujeme nejíst hodinu před sezením.",
-  },
-  {
-    q: "Jsou nějaké zdravotní kontraindikace?",
-    a: "Ano — breathwork nedoporučujeme v těhotenství, při závažných kardiovaskulárních obtížích, epilepsii, glaukomu nebo při akutních psychických stavech. V případě pochybností mě prosím kontaktujte.",
-  },
-];
 
 function Index() {
   const [activeService, setActiveService] = useState(services[0].id);
@@ -217,37 +157,28 @@ function Index() {
             />
           </div>
           <div className="flex flex-col justify-center">
-            <span className="mb-4 text-xs uppercase tracking-[0.25em] text-brown">O mně</span>
+            <span className="mb-4 text-xs uppercase tracking-[0.25em] text-brown">
+              {oMne.meta.eyebrow}
+            </span>
             <h2 className="font-serif text-4xl leading-tight text-brown-deep sm:text-5xl">
-              Jmenuji se Lucie Vaňková
+              {oMne.meta.title}
             </h2>
             <div className="mt-6 space-y-5 text-[15px] leading-relaxed text-muted-foreground">
-              <p>
-                K breathworku mě přivedla vlastní cesta hledáním klidu uprostřed
-                rychlého životního tempa. Během posledních let jsem prošla
-                výcvikem v conscious connected breathing a vedu sezení, ve kterých
-                lidé nacházejí prostor k odpočinku, uvolnění i hluboké proměně.
-              </p>
-              <p>
-                Věřím, že dech je nejjemnějším a zároveň nejsilnějším nástrojem,
-                který nosíme neustále s sebou. Moje práce stojí na bezpečí,
-                laskavosti a respektu k tempu každého člověka.
-              </p>
+              {oMne.body.map((p) => (
+                <p key={p}>{p}</p>
+              ))}
             </div>
             <div className="mt-8 flex gap-8 border-t border-border pt-6">
-              <div>
-                <p className="font-serif text-3xl text-brown-deep">5+</p>
-                <p className="text-xs uppercase tracking-widest text-muted-foreground">
-                  let praxe
-                </p>
-              </div>
-              <div>
-                <p className="font-serif text-3xl text-brown-deep">certifikace</p>
-                <p className="text-xs uppercase tracking-widest text-muted-foreground">
-                  CCB · Somatic
-                </p>
-              </div>
+              {oMne.items.map((s) => (
+                <div key={s.title}>
+                  <p className="font-serif text-3xl text-brown-deep">{s.title}</p>
+                  <p className="text-xs uppercase tracking-widest text-muted-foreground">
+                    {s.meta.label}
+                  </p>
+                </div>
+              ))}
             </div>
+
           </div>
         </div>
       </section>
@@ -257,15 +188,13 @@ function Index() {
         <div className="mx-auto max-w-6xl px-6 py-24 lg:px-10">
           <div className="mx-auto max-w-2xl text-center">
             <span className="text-xs uppercase tracking-[0.25em] text-brown">
-              Co je Breathwork
+              {prinosy.meta.eyebrow}
             </span>
             <h2 className="mt-4 font-serif text-4xl leading-tight text-brown-deep sm:text-5xl">
-              Přínosy vědomého dýchání
+              {prinosy.meta.title}
             </h2>
-            <p className="mt-5 text-muted-foreground">
-              Vědomá dechová práce je jednoduchá, mocná a přístupná každému —
-              propojuje tělo, mysl a emoce v jeden celek.
-            </p>
+            <p className="mt-5 text-muted-foreground">{prinosy.body.join(" ")}</p>
+
           </div>
           <div className="mt-16 grid gap-6 md:grid-cols-3">
             {benefits.map((b) => (
@@ -291,14 +220,15 @@ function Index() {
         <div className="mx-auto max-w-6xl px-6 py-24 lg:px-10">
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
-              <span className="text-xs uppercase tracking-[0.25em] text-brown">Nabídka</span>
+              <span className="text-xs uppercase tracking-[0.25em] text-brown">
+                {sluzby.meta.eyebrow}
+              </span>
               <h2 className="mt-4 font-serif text-4xl leading-tight text-brown-deep sm:text-5xl">
-                Nabídka služeb
+                {sluzby.meta.title}
               </h2>
             </div>
-            <p className="max-w-md text-muted-foreground">
-              Vyberte formát, který nejlépe odpovídá vašemu záměru a rytmu.
-            </p>
+            <p className="max-w-md text-muted-foreground">{sluzby.meta.intro}</p>
+
           </div>
 
           <div className="mt-12 grid gap-8 lg:grid-cols-[1fr_1.4fr]">
@@ -348,7 +278,7 @@ function Index() {
                   href="#rezervace"
                   className="rounded-full bg-brown px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-brown-deep"
                 >
-                  Rezervovat termín
+                  {sluzby.meta.cta}
                 </a>
               </div>
             </div>
@@ -415,11 +345,12 @@ function Index() {
         <div className="mx-auto max-w-6xl px-6 py-24 lg:px-10">
           <div className="mx-auto max-w-2xl text-center">
             <span className="text-xs uppercase tracking-[0.25em] text-brown">
-              Reference
+              {reference.meta.eyebrow}
             </span>
             <h2 className="mt-4 font-serif text-4xl leading-tight text-brown-deep sm:text-5xl">
-              Slova těch, kteří dýchali se mnou
+              {reference.meta.title}
             </h2>
+
           </div>
           <div className="mt-16 grid gap-6 md:grid-cols-3">
             {testimonials.map((t) => (
@@ -447,14 +378,14 @@ function Index() {
       <section id="faq" className="border-t border-border/60 bg-rose/30">
         <div className="mx-auto grid max-w-6xl gap-14 px-6 py-24 md:grid-cols-[1fr_1.4fr] lg:px-10">
           <div>
-            <span className="text-xs uppercase tracking-[0.25em] text-brown">FAQ</span>
+            <span className="text-xs uppercase tracking-[0.25em] text-brown">
+              {dotazy.meta.eyebrow}
+            </span>
             <h2 className="mt-4 font-serif text-4xl leading-tight text-brown-deep sm:text-5xl">
-              Nejčastější dotazy
+              {dotazy.meta.title}
             </h2>
-            <p className="mt-5 text-muted-foreground">
-              Nenašli jste odpověď? Ozvěte se mi přímo — ráda vám vše
-              vysvětlím.
-            </p>
+            <p className="mt-5 text-muted-foreground">{dotazy.meta.intro}</p>
+
           </div>
           <div className="flex flex-col gap-3">
             {faqs.map((f, i) => {
