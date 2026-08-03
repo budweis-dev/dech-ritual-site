@@ -355,12 +355,9 @@ function Index() {
           </div>
 
           <div className="mt-14 overflow-hidden rounded-3xl border border-border bg-card p-4 shadow-sm sm:p-8">
-            <div
-              id="zenamu-workshops"
-              calendar-id="96c7a0ca48777e9a7b02404c0386a246"
-              data-config='{"showTitle": true}'
-            />
+            <div ref={zenamuRef} id="zenamu-workshops" />
           </div>
+
           <p className="mt-6 text-center text-xs text-muted-foreground">
             Rezervace probíhá zabezpečeně přes Zenamu · potvrzení obdržíte e-mailem
           </p>
