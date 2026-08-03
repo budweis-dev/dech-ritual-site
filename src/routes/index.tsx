@@ -65,12 +65,8 @@ const services = [
   },
 ];
 
-const slots = [
-  { day: "Út", date: "12. 11.", time: "18:00", type: "Dechový kruh", free: true },
-  { day: "Čt", date: "14. 11.", time: "10:00", type: "Individuální", free: true },
-  { day: "So", date: "16. 11.", time: "09:30", type: "Workshop", free: false },
-  { day: "Po", date: "18. 11.", time: "19:00", type: "Dechový kruh", free: true },
-];
+
+
 
 const testimonials = [
   {
