@@ -188,15 +188,13 @@ function Index() {
         <div className="mx-auto max-w-6xl px-6 py-24 lg:px-10">
           <div className="mx-auto max-w-2xl text-center">
             <span className="text-xs uppercase tracking-[0.25em] text-brown">
-              Co je Breathwork
+              {prinosy.meta.eyebrow}
             </span>
             <h2 className="mt-4 font-serif text-4xl leading-tight text-brown-deep sm:text-5xl">
-              Přínosy vědomého dýchání
+              {prinosy.meta.title}
             </h2>
-            <p className="mt-5 text-muted-foreground">
-              Vědomá dechová práce je jednoduchá, mocná a přístupná každému —
-              propojuje tělo, mysl a emoce v jeden celek.
-            </p>
+            <p className="mt-5 text-muted-foreground">{prinosy.body.join(" ")}</p>
+
           </div>
           <div className="mt-16 grid gap-6 md:grid-cols-3">
             {benefits.map((b) => (
@@ -222,14 +220,15 @@ function Index() {
         <div className="mx-auto max-w-6xl px-6 py-24 lg:px-10">
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
-              <span className="text-xs uppercase tracking-[0.25em] text-brown">Nabídka</span>
+              <span className="text-xs uppercase tracking-[0.25em] text-brown">
+                {sluzby.meta.eyebrow}
+              </span>
               <h2 className="mt-4 font-serif text-4xl leading-tight text-brown-deep sm:text-5xl">
-                Nabídka služeb
+                {sluzby.meta.title}
               </h2>
             </div>
-            <p className="max-w-md text-muted-foreground">
-              Vyberte formát, který nejlépe odpovídá vašemu záměru a rytmu.
-            </p>
+            <p className="max-w-md text-muted-foreground">{sluzby.meta.intro}</p>
+
           </div>
 
           <div className="mt-12 grid gap-8 lg:grid-cols-[1fr_1.4fr]">
@@ -279,7 +278,7 @@ function Index() {
                   href="#rezervace"
                   className="rounded-full bg-brown px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-brown-deep"
                 >
-                  Rezervovat termín
+                  {sluzby.meta.cta}
                 </a>
               </div>
             </div>
@@ -346,11 +345,12 @@ function Index() {
         <div className="mx-auto max-w-6xl px-6 py-24 lg:px-10">
           <div className="mx-auto max-w-2xl text-center">
             <span className="text-xs uppercase tracking-[0.25em] text-brown">
-              Reference
+              {reference.meta.eyebrow}
             </span>
             <h2 className="mt-4 font-serif text-4xl leading-tight text-brown-deep sm:text-5xl">
-              Slova těch, kteří dýchali se mnou
+              {reference.meta.title}
             </h2>
+
           </div>
           <div className="mt-16 grid gap-6 md:grid-cols-3">
             {testimonials.map((t) => (
@@ -378,14 +378,14 @@ function Index() {
       <section id="faq" className="border-t border-border/60 bg-rose/30">
         <div className="mx-auto grid max-w-6xl gap-14 px-6 py-24 md:grid-cols-[1fr_1.4fr] lg:px-10">
           <div>
-            <span className="text-xs uppercase tracking-[0.25em] text-brown">FAQ</span>
+            <span className="text-xs uppercase tracking-[0.25em] text-brown">
+              {dotazy.meta.eyebrow}
+            </span>
             <h2 className="mt-4 font-serif text-4xl leading-tight text-brown-deep sm:text-5xl">
-              Nejčastější dotazy
+              {dotazy.meta.title}
             </h2>
-            <p className="mt-5 text-muted-foreground">
-              Nenašli jste odpověď? Ozvěte se mi přímo — ráda vám vše
-              vysvětlím.
-            </p>
+            <p className="mt-5 text-muted-foreground">{dotazy.meta.intro}</p>
+
           </div>
           <div className="flex flex-col gap-3">
             {faqs.map((f, i) => {
