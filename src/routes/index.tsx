@@ -2,6 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import heroImg from "@/assets/hero.jpg";
 import lucieImg from "@/assets/lucie.jpg";
+import { dotazy, oMne, prinosy, reference, sluzby } from "@/content";
+
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -16,93 +18,31 @@ const nav = [
   { href: "#kontakt", label: "Kontakt" },
 ];
 
-const benefits = [
-  {
-    n: "01",
-    title: "Mentální čistota a úleva od stresu",
-    body: "Uvolněte napětí, zpomalte myšlenkové proudy a najděte prostor pro klid a jasnost mysli.",
-  },
-  {
-    n: "02",
-    title: "Hluboká regenerace organismu",
-    body: "Okysličení buněk, podpora nervového systému a přirozená obnova energie skrze vědomý dech.",
-  },
-  {
-    n: "03",
-    title: "Emoční uvolnění a vnitřní klid",
-    body: "Bezpečné rozpuštění zadržovaných emocí a návrat k pocitu celistvosti a přítomnosti.",
-  },
-];
+const benefits = prinosy.items.map((i) => ({
+  n: i.meta.n ?? "",
+  title: i.title,
+  body: i.body.join(" "),
+}));
 
-const services = [
-  {
-    id: "individual",
-    title: "Individuální sezení",
-    tag: "1 : 1",
-    body: "Osobní 90minutové sezení šité na míru vaším potřebám. Bezpečný prostor pro hlubokou práci s dechem, emocemi a tělem.",
-    price: "od 1 800 Kč",
-  },
-  {
-    id: "kruhy",
-    title: "Skupinové dechové kruhy",
-    tag: "Skupina",
-    body: "Sdílený rituál v malé skupině, kde společně vstupujeme do stavu hlubokého dechu a společné regenerace.",
-    price: "od 650 Kč",
-  },
-  {
-    id: "workshopy",
-    title: "Workshopy & Retreaty",
-    tag: "Víkend",
-    body: "Delší formáty spojující breathwork, meditaci a pobyt v přírodě. Prostor pro proměnu a nový začátek.",
-    price: "od 3 900 Kč",
-  },
-  {
-    id: "firmy",
-    title: "Firemní programy na míru",
-    tag: "B2B",
-    body: "Dechové programy pro týmy — od krátkých session až po celodenní wellbeing dny s důrazem na regeneraci.",
-    price: "na vyžádání",
-  },
-];
+const services = sluzby.items.map((i, idx) => ({
+  id: i.meta.id ?? String(idx),
+  title: i.title,
+  tag: i.meta.tag ?? "",
+  body: i.body.join(" "),
+  price: i.meta.price ?? "",
+}));
 
+const testimonials = reference.items.map((i) => ({
+  quote: i.body.join(" "),
+  name: i.title,
+  role: i.meta.role ?? "",
+}));
 
+const faqs = dotazy.items.map((i) => ({
+  q: i.title,
+  a: i.body.join(" "),
+}));
 
-
-const testimonials = [
-  {
-    quote:
-      "Po prvním sezení s Lucií jsem cítila úlevu, kterou jsem dlouho hledala. Neuvěřitelně jemný a bezpečný přístup.",
-    name: "Kateřina H.",
-    role: "Praha",
-  },
-  {
-    quote:
-      "Breathwork mi otevřel dveře k emocím, o kterých jsem netušila, že je v sobě nosím. Doporučuji každému.",
-    name: "Markéta S.",
-    role: "Brno",
-  },
-  {
-    quote:
-      "Skupinový kruh byl transformační zážitek. Lucie drží prostor s neuvěřitelnou přítomností a laskavostí.",
-    name: "Tomáš V.",
-    role: "Praha",
-  },
-];
-
-const faqs = [
-  {
-    q: "Jak probíhá první individuální sezení?",
-    a: "Sezení trvá zhruba 90 minut. Začínáme krátkým rozhovorem o vašem záměru, následuje samotná dechová technika vleže s hudbou a v závěru sdílíme prožitky a integrujeme.",
-  },
-  {
-    q: "Co si vzít na skupinový dechový kruh na sebe?",
-    a: "Pohodlné, volné oblečení ve vrstvách. Karimatku, deku a polštář si na místě zajistíme. Doporučujeme nejíst hodinu před sezením.",
-  },
-  {
-    q: "Jsou nějaké zdravotní kontraindikace?",
-    a: "Ano — breathwork nedoporučujeme v těhotenství, při závažných kardiovaskulárních obtížích, epilepsii, glaukomu nebo při akutních psychických stavech. V případě pochybností mě prosím kontaktujte.",
-  },
-];
 
 function Index() {
   const [activeService, setActiveService] = useState(services[0].id);
