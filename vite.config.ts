@@ -11,14 +11,14 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 const isStaticBuild = process.env["STATIC_BUILD"] === "true";
 
 export default defineConfig({
-  tanstackStart: {
-    // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
-    // nitro/vite builds from this
-    server: { entry: "server" },
-    ...(isStaticBuild
-      ? { prerender: { enabled: true, crawlLinks: true }, pages: [{ path: "/" }] }
-      : {}),
-  },
+  tanstackStart: isStaticBuild
+    ? { prerender: { enabled: true, crawlLinks: true }, pages: [{ path: "/" }] }
+    : {
+        // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
+        // nitro/vite builds from this
+        server: { entry: "server" },
+      },
   ...(isStaticBuild ? { nitro: { preset: "static" as const } } : {}),
 });
+
 
