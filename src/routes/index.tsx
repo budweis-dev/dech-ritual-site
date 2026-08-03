@@ -157,37 +157,28 @@ function Index() {
             />
           </div>
           <div className="flex flex-col justify-center">
-            <span className="mb-4 text-xs uppercase tracking-[0.25em] text-brown">O mně</span>
+            <span className="mb-4 text-xs uppercase tracking-[0.25em] text-brown">
+              {oMne.meta.eyebrow}
+            </span>
             <h2 className="font-serif text-4xl leading-tight text-brown-deep sm:text-5xl">
-              Jmenuji se Lucie Vaňková
+              {oMne.meta.title}
             </h2>
             <div className="mt-6 space-y-5 text-[15px] leading-relaxed text-muted-foreground">
-              <p>
-                K breathworku mě přivedla vlastní cesta hledáním klidu uprostřed
-                rychlého životního tempa. Během posledních let jsem prošla
-                výcvikem v conscious connected breathing a vedu sezení, ve kterých
-                lidé nacházejí prostor k odpočinku, uvolnění i hluboké proměně.
-              </p>
-              <p>
-                Věřím, že dech je nejjemnějším a zároveň nejsilnějším nástrojem,
-                který nosíme neustále s sebou. Moje práce stojí na bezpečí,
-                laskavosti a respektu k tempu každého člověka.
-              </p>
+              {oMne.body.map((p) => (
+                <p key={p}>{p}</p>
+              ))}
             </div>
             <div className="mt-8 flex gap-8 border-t border-border pt-6">
-              <div>
-                <p className="font-serif text-3xl text-brown-deep">5+</p>
-                <p className="text-xs uppercase tracking-widest text-muted-foreground">
-                  let praxe
-                </p>
-              </div>
-              <div>
-                <p className="font-serif text-3xl text-brown-deep">certifikace</p>
-                <p className="text-xs uppercase tracking-widest text-muted-foreground">
-                  CCB · Somatic
-                </p>
-              </div>
+              {oMne.items.map((s) => (
+                <div key={s.title}>
+                  <p className="font-serif text-3xl text-brown-deep">{s.title}</p>
+                  <p className="text-xs uppercase tracking-widest text-muted-foreground">
+                    {s.meta.label}
+                  </p>
+                </div>
+              ))}
             </div>
+
           </div>
         </div>
       </section>
